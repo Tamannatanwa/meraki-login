@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Box, Button, Typography, Switch } from "@mui/material";
+import { Google as GoogleIcon } from "@mui/icons-material";
+import LoginForm from "./componets/LoginForm";
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const handleToggle = () => {
+    setIsLoggedIn((prevState) => !prevState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+      flexDirection="column"
+    >
+      {isLoggedIn ? (
+        <Button
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          color="primary"
+          style={{ borderRadius: "50px", marginBottom: "20px" }}
+          onClick={handleToggle}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Login with Google
+        </Button>
+        
+      ) : (
+          <LoginForm />
+      )}
+
+      {isLoggedIn && (
+        <>
+        <Typography
+          variant="body2"
+          style={{ marginTop: "20px", color: "gray" }}
+        >
+          Login with Student ID
+        </Typography>
+
+        <Switch
+            checked={!isLoggedIn} // Switches back to Google login
+            onChange={handleToggle}
+            color="primary"
+            sx={{ marginTop: 0 }} // No additional margin to prevent gaps
+          />
+          </>
+      )}
+    </Box>
   );
-}
+};
 
 export default App;
