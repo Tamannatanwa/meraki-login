@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Rubik+Bubbles&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .m-Auto {
+    margin: 0 auto;
+  }
+  
+  .textCenter {
+    text-align: center;
+  }
+  
+  header {
+    width: 100%;
+    height: 80px;
+    padding: 8px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .AvatarBox {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .Camera {
+    width: 32px;
+    height: 32px;
+    background: #29458c;
+    color: #fff;
+    border-radius: 100px;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .profileBtn {
+    min-width: 200px;
+    background: linear-gradient(90deg, rgba(41, 69, 140, 0.72) 0%, #192954 100%);
+    color: #FFFFFF;
+  }
+  
+  .teamBtn {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #29458C;
+    color: #29458C;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  
+  .teamBtn-selected {
+    background-color: #c5d6f9;
+  }
+  .drop-file-input {
+    position: relative;
+    width: 100%;
+    padding: 64px;
+    border: 2px dashed #29458c;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drop-file-input input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .drop-file-input__label {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    padding: 10px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 1px solid #2E2E2E;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    resize: none;
+  }
+  @keyframes rotate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-container {
+    width: 100px;
+    height: 100px;
+    margin: 35vh 47vw;
+    border-radius: 100%;
+  }
+  
+  .loading {
+    border: 2px solid transparent;
+    border-color: transparent #ff0000 transparent #d80000;
+    animation: rotate-loading 1.5s linear infinite;
+    transform-origin: 50% 50%;
+  }
+  
+  .loading-container:hover .loading {
+    border-color: transparent #e45635 transparent #e45635;
+  }
+      
+
+
+
+  
